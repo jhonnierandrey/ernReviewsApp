@@ -48,15 +48,15 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 0,
+    left: 16,
+  },
+  headerTitle: {
+    flexDirection: "row",
   },
   headerImage: {
     width: 26,
     height: 26,
     marginHorizontal: 10,
-  },
-  headerTitle: {
-    flexDirection: "row",
   },
 });
 

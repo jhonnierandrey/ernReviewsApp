@@ -12,12 +12,12 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen
-          name="HomeStack"
+          name="Reviews Home"
           component={HomeStack}
           options={{ headerShown: false }}
         />
         <Drawer.Screen
-          name="About Stack"
+          name="About Reviews"
           component={AboutStack}
           options={{ headerShown: false }}
         />

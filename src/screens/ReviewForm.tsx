@@ -1,4 +1,4 @@
-import { View, TextInput, Text, Button } from "react-native";
+import { View, TextInput, Text, StyleSheet } from "react-native";
 import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -33,40 +33,41 @@ const ReviewForm = ({ addReview }: ReviewFormProps) => {
         }}
       >
         {(props) => (
-          <View>
-            <TextInput
-              placeholder="Review title"
-              onChangeText={props.handleChange("title")}
-              value={props.values.title}
-              style={globalStyles.input}
-              onBlur={props.handleBlur("title")}
-            />
-            <Text style={globalStyles.errorText}>
-              {props.touched.title && props.errors.title}
-            </Text>
-            <TextInput
-              multiline
-              placeholder="Review body"
-              onChangeText={props.handleChange("body")}
-              value={props.values.body}
-              style={globalStyles.input}
-              onBlur={props.handleBlur("body")}
-            />
-            <Text style={globalStyles.errorText}>
-              {props.touched.body && props.errors.body}
-            </Text>
-            <TextInput
-              placeholder="Rating (1-5)"
-              onChangeText={props.handleChange("rating")}
-              value={props.values.rating}
-              style={globalStyles.input}
-              keyboardType="numeric"
-              onBlur={props.handleBlur("rating")}
-            />
-            <Text style={globalStyles.errorText}>
-              {props.touched.rating && props.errors.rating}
-            </Text>
-
+          <View style={styles.formContainer}>
+            <View style={styles.fields}>
+              <TextInput
+                placeholder="Game title"
+                onChangeText={props.handleChange("title")}
+                value={props.values.title}
+                style={globalStyles.input}
+                onBlur={props.handleBlur("title")}
+              />
+              <Text style={globalStyles.errorText}>
+                {props.touched.title && props.errors.title}
+              </Text>
+              <TextInput
+                multiline
+                placeholder="Review"
+                onChangeText={props.handleChange("body")}
+                value={props.values.body}
+                style={globalStyles.input}
+                onBlur={props.handleBlur("body")}
+              />
+              <Text style={globalStyles.errorText}>
+                {props.touched.body && props.errors.body}
+              </Text>
+              <TextInput
+                placeholder="Rating (1-5)"
+                onChangeText={props.handleChange("rating")}
+                value={props.values.rating}
+                style={globalStyles.input}
+                keyboardType="numeric"
+                onBlur={props.handleBlur("rating")}
+              />
+              <Text style={globalStyles.errorText}>
+                {props.touched.rating && props.errors.rating}
+              </Text>
+            </View>
             <FlatButton text="Submit" onPress={props.handleSubmit} />
           </View>
         )}
@@ -74,5 +75,13 @@ const ReviewForm = ({ addReview }: ReviewFormProps) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  formContainer: {
+    flex: 1,
+    justifyContent: "space-between",
+  },
+  fields: {},
+});
 
 export default ReviewForm;

@@ -11,7 +11,7 @@ const HomeStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "#eee", height: 120 },
+        headerStyle: { backgroundColor: "#eee", height: 110 },
         headerTintColor: "#444",
       }}
     >

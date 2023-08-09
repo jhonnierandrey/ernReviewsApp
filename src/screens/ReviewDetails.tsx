@@ -12,8 +12,8 @@ const ReviewDetails = ({ route }: ReviewDetailsProps) => {
   return (
     <View style={globalStyles.container}>
       <Card>
-        <Text>{title}</Text>
-        <Text>{body}</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.paragraph}>{body}</Text>
         <View style={styles.rating}>
           <Text>Rating:</Text>
           <Image source={images.ratings[rating]} />
@@ -24,6 +24,17 @@ const ReviewDetails = ({ route }: ReviewDetailsProps) => {
 };
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    paddingVertical: 10,
+  },
+  paragraph: {
+    marginVertical: 8,
+    lineHeight: 20,
+    textAlign: "justify",
+  },
   rating: {
     flexDirection: "row",
     justifyContent: "center",

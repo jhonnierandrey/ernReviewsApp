@@ -14,6 +14,7 @@ import { globalStyles } from "../styles/global";
 import ReviewForm from "./ReviewForm";
 import Card from "../components/Card";
 import { ReviewType } from "../types/types";
+import FlatButton from "../components/Button";
 
 type HomeProps = {
   navigation: any;
@@ -23,21 +24,21 @@ const Home = ({ navigation }: HomeProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [reviews, setReviews] = useState<ReviewType[]>([
     {
-      title: "Zelda, Breath of Fresh Air",
-      rating: "5",
-      body: "lorem ipsum",
+      title: "Fortnite",
+      rating: "3",
+      body: "Fortnite is an immensely popular battle royale game that offers fast-paced action and a unique building mechanic. The constant updates and new content keep the game fresh and exciting.",
       key: "1",
     },
     {
-      title: "Gotta Catch Them All (again)",
+      title: "Forza",
       rating: "4",
-      body: "lorem ipsum",
+      body: "Forza is a fantastic racing game series that offers stunning graphics, a wide range of cars and tracks, and realistic driving mechanics. Whether you're a casual racer or a hardcore simulation enthusiast, Forza has something for everyone.",
       key: "2",
     },
     {
-      title: 'Not So "Final" Fantasy',
+      title: "Minecraft",
       rating: "3",
-      body: "lorem ipsum",
+      body: "Minecraft is a creative sandbox game that allows players to build, explore, and survive in a blocky world. Its limitless possibilities for creativity and the sense of accomplishment from crafting your own adventures make it a timeless classic.",
       key: "3",
     },
   ]);
@@ -56,7 +57,7 @@ const Home = ({ navigation }: HomeProps) => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.modalContent}>
             <MaterialIcons
-              name="add"
+              name="close"
               style={{ ...styles.modalToggle, ...styles.modalClose }}
               size={24}
               onPress={() => setModalOpen(false)}
@@ -66,12 +67,12 @@ const Home = ({ navigation }: HomeProps) => {
         </TouchableWithoutFeedback>
       </Modal>
 
-      <MaterialIcons
+      {/* <MaterialIcons
         name="add"
         style={styles.modalToggle}
         size={24}
         onPress={() => setModalOpen(true)}
-      />
+      /> */}
 
       <FlatList
         data={reviews}
@@ -85,6 +86,7 @@ const Home = ({ navigation }: HomeProps) => {
           </TouchableOpacity>
         )}
       />
+      <FlatButton text="Add review" onPress={() => setModalOpen(true)} />
     </View>
   );
 };
@@ -102,8 +104,13 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   modalClose: {
-    marginTop: 20,
+    marginTop: 60,
     marginBottom: 0,
+    marginHorizontal: 20,
+    alignSelf: "flex-end",
+    borderColor: "#ff0000",
+    // backgroundColor: "red",
+    color: "red",
   },
 });
 
