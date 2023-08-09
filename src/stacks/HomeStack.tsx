@@ -20,8 +20,6 @@ const HomeStack = () => {
         component={Home}
         options={({ navigation }) => {
           return {
-            // title: "Reviews Home",
-            // headerStyle: { backgroundColor: "#eee" },
             headerTitle: () => <Header navigation={navigation} title="Home" />,
           };
         }}

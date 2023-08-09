@@ -1,7 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
 import About from "../screens/About";
-
 import Header from "../components/Header";
 
 const Stack = createStackNavigator();
@@ -19,8 +18,6 @@ const AboutStack = () => {
         component={About}
         options={({ navigation }) => {
           return {
-            // title: "Reviews Home",
-            // headerStyle: { backgroundColor: "#eee" },
             headerTitle: () => <Header navigation={navigation} title="About" />,
           };
         }}
