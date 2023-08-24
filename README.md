@@ -4,7 +4,7 @@ Basic Reviews application made with **Expo** and **React Native** to manage simp
 
 As seen in [React Native for Beginners by Netninja.](https://netninja.dev/p/react-native-for-beginners) TypeScript by personal preference.
 
-![Reviews App](https://www.jaesmadeit.com/assets/img/projects/mobile-apps/reviewsapp-preview.png)
+![Reviews App Preview](https://www.jaesmadeit.com/assets/img/projects/mobile-apps/reviewsapp-preview.png)
 
 ## How to use:
 
